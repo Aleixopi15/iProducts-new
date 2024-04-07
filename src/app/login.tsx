@@ -1,7 +1,8 @@
+import { View, Image, Text, KeyboardAvoidingView } from "react-native";
+import { Link } from "expo-router";
+
 import { ButtonLogin } from "@/components/button-login";
 import { InputLogin } from "@/components/input-login";
-import { View, Image, Text, KeyboardAvoidingView } from "react-native";
-import { Link, Redirect } from "expo-router";
 
 export default function Login() {
     return (
@@ -12,6 +13,7 @@ export default function Login() {
             <Image className="rounded-full h-44 w-44" source={require("@/assets/logo.png")}/>
             </View>
             <View className="pr-12 pl-12 pt-8 w-full">
+
                 <Text className="pb-2 font-semibold">Endereço de email</Text>
                 <InputLogin>
                 <InputLogin.Field placeholder="Email"/>

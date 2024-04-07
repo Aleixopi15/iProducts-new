@@ -1,7 +1,8 @@
-import { ButtonLogin } from "@/components/button-login";
-import { InputLogin } from "@/components/input-login";
 import { View, Image, Text, KeyboardAvoidingView } from "react-native";
 import { Link, Redirect } from "expo-router";
+
+import { ButtonLogin } from "@/components/button-login";
+import { InputLogin } from "@/components/input-login";
 
 export default function Register() {
     return (
@@ -15,17 +16,17 @@ export default function Register() {
 
                 <Text className="pb-2 font-semibold">Nome e sobrenome</Text>
                 <InputLogin>
-                <InputLogin.Field placeholder="Email"/>
+                <InputLogin.Field placeholder="Nome"/>
                 </InputLogin>
 
                 <Text className="pt-4 pb-2 font-semibold">Endereço de email</Text>
                 <InputLogin>
-                <InputLogin.Field placeholder="Senha"/>
+                <InputLogin.Field placeholder="Email"/>
                 </InputLogin>
 
                 <Text className="pb-2 pt-4 font-semibold">Senha</Text>
                 <InputLogin>
-                <InputLogin.Field placeholder="Email"/>
+                <InputLogin.Field placeholder="Senha"/>
                 </InputLogin>
 
                 <Text className="pt-4 pb-2 font-semibold">Confirmar senha</Text>
