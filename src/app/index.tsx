@@ -5,6 +5,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Button } from "@/components/button"
 
 export default function Initial() {
+
     return (
         <View className="flex-1 bg-green-500 items-center pt-40 p-14">
 
@@ -14,16 +15,12 @@ export default function Initial() {
 
                 <Button title="Login com o google" />
 
-                <Button title="Login" onPress={ () => router.navigate("/home")} />
+                <Button title="Login" onPress={ () => router.navigate("/login")} />
                 
             </View>
             
             <TouchableOpacity activeOpacity={0.7}>
                 <Link href="/register" className="pt-6 text-white font-inter-bold">Ainda não possui conta?</Link>
-            </TouchableOpacity>
-
-            <TouchableOpacity activeOpacity={0.7}>
-                <Link href="/home" className="pt-6 font-inter-bold text-white ">TESTE</Link>
             </TouchableOpacity>
         </View>
     )

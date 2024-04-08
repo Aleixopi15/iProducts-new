@@ -1,5 +1,5 @@
 import { View, Image, Text, KeyboardAvoidingView } from "react-native";
-import { Link, Redirect } from "expo-router";
+import { router } from "expo-router";
 
 import { ButtonLogin } from "@/components/button-login";
 import { InputLogin } from "@/components/input-login";
@@ -35,7 +35,7 @@ export default function Register() {
                 </InputLogin>
 
             <View className="flex-1 pt-8">
-            <ButtonLogin className="" title="Login" />
+            <ButtonLogin className="" title="Login" onPress={ () => router.navigate("/home")}/>
             </View>
             </View>
         </View>
