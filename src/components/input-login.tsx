@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import { TextInput, View, TextInputProps } from "react-native";
 
 function InputLogin({ children }: { children: ReactNode }){
-    return <View className="w-full h-12 flex-row items-center gap-3 border-b border-black">{children}</View>
+    return <View className="w-full h-12 flex-row items-center gap-3 border-b border-black/70">{children}</View>
 }
 
 function Field({ ...rest }: TextInputProps){

@@ -1,5 +1,5 @@
 import { View, Image, Text, KeyboardAvoidingView } from "react-native";
-import { Link } from "expo-router";
+import { Link, } from "expo-router";
 
 import { ButtonLogin } from "@/components/button-login";
 import { InputLogin } from "@/components/input-login";

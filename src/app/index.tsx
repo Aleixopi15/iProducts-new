@@ -14,16 +14,16 @@ export default function Initial() {
 
                 <Button title="Login com o google" />
 
-                <Button title="Login" />
+                <Button title="Login" onPress={ () => router.navigate("/home")} />
                 
             </View>
             
             <TouchableOpacity activeOpacity={0.7}>
-                <Link href="/register" className="pt-6 text-white font-bold">Ainda nâo possui conta?</Link>
+                <Link href="/register" className="pt-6 text-white font-inter-bold">Ainda não possui conta?</Link>
             </TouchableOpacity>
 
             <TouchableOpacity activeOpacity={0.7}>
-                <Link href="/home" className="pt-6 font-rounded-bold text-white ">TESTE</Link>
+                <Link href="/home" className="pt-6 font-inter-bold text-white ">TESTE</Link>
             </TouchableOpacity>
         </View>
     )

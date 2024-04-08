@@ -1,3 +1,4 @@
+import { Link } from "expo-router"
 import { View, TouchableOpacity, TouchableOpacityProps, Text } from "react-native"
 
 type Props = TouchableOpacityProps & {
@@ -8,7 +9,7 @@ export function Button( { title, ...rest }: Props ){
     return (
         <TouchableOpacity activeOpacity={0.7}>
             <View className="w-full h-16 items-center bg-white justify-center rounded-full">
-                <Text className="font-bold text-lg"> {title} </Text>
+                <Text className="font-inter-bold text-lg"> {title} </Text>
             </View>
         </TouchableOpacity>
     )

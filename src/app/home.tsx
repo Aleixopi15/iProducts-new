@@ -1,6 +1,7 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { Feather } from '@expo/vector-icons';
 import { Search } from "@/components/search";
+import { Categories } from "@/components/categories";
 
 export default function Home() {
     return (
@@ -21,6 +22,8 @@ export default function Home() {
             <Text className="font-inter-bold text-[35px] mt-8 mb-14">Produtos incríveis para você</Text>
 
             <Search placeholder="Pesquisar"/>
+
+            <Categories />
         </View>
     )
 }
