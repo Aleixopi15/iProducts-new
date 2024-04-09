@@ -31,22 +31,22 @@ export default function Register() {
             </View>
             <View className="pr-12 pl-12 pt-8 w-full">
 
-                <Text className="pb-2 font-semibold">Nome e sobrenome</Text>
+                <Text className="pb-2 font-inter-bold">Nome e sobrenome</Text>
                 <InputLogin>
                 <InputLogin.Field placeholder="Nome" onChangeText={setName}/>
                 </InputLogin>
 
-                <Text className="pt-4 pb-2 font-semibold">Endereço de email</Text>
+                <Text className="pt-4 pb-2 font-inter-bold">Endereço de email</Text>
                 <InputLogin>
                 <InputLogin.Field placeholder="Email" keyboardType="email-address" onChangeText={setEmail}/>
                 </InputLogin>
 
-                <Text className="pb-2 pt-4 font-semibold">Senha</Text>
+                <Text className="pb-2 pt-4 font-inter-bold">Senha</Text>
                 <InputLogin>
                 <InputLogin.Field placeholder="Senha" onChangeText={setPassword}/>
                 </InputLogin>
 
-                <Text className="pt-4 pb-2 font-semibold">Confirmar senha</Text>
+                <Text className="pt-4 pb-2 font-inter-bold">Confirmar senha</Text>
                 <InputLogin>
                 <InputLogin.Field placeholder="Confirmar senha" onChangeText={setConfirmPassword}/>
                 </InputLogin>

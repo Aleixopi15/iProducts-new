@@ -19,7 +19,7 @@ export default function Login() {
     } catch (error) {
         console.log(error)
     }}
-    
+
     return (
         
         <View className="flex-1 bg-gray-100 items-center">
@@ -29,17 +29,17 @@ export default function Login() {
             </View>
             <View className="pr-12 pl-12 pt-8 w-full">
 
-                <Text className="pb-2 font-semibold">Endereço de email</Text>
+                <Text className="pb-2 font-inter-bold">Endereço de email</Text>
                 <InputLogin>
                 <InputLogin.Field placeholder="Email" keyboardType="email-address" onChangeText={setEmail}/>
                 </InputLogin>
 
-                <Text className="pt-4 pb-2 font-semibold">Senha</Text>
+                <Text className="pt-4 pb-2 font-inter-bold">Senha</Text>
                 <InputLogin>
                 <InputLogin.Field placeholder="Senha" onChangeText={setPassword}/>
                 </InputLogin>
 
-                <Link href="/login" className="text-green-500 pt-6 font-bold">Esqueceu sua senha?</Link>
+                <Link href="/login" className="text-green-500 pt-6 font-inter-bold">Esqueceu sua senha?</Link>
 
             <View className="flex-1 pt-44">
             <ButtonLogin className="" title="Login" onPress={handleLogin}/>

@@ -9,7 +9,7 @@ function InputLogin({ children }: { children: ReactNode }){
 function Field({ ...rest }: TextInputProps){
     return (
     <TextInput 
-    className="flex-1 text-black text-base font-regular"
+    className="flex-1 text-black text-base font-inter-medium"
     placeholderTextColor={colors.gray[200]}
     {...rest}
     />
