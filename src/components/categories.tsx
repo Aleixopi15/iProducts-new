@@ -9,6 +9,7 @@ export function Categories() {
             <Text className="font-inter-bold text-gray-200 text-2xl">Cozinha</Text>
             <Text className="font-inter-bold text-gray-200 text-2xl">Eletrônicos</Text>
             <Text className="font-inter-bold text-gray-200 text-2xl">Saúde</Text>
+            <Text className="font-inter-bold text-gray-200 text-2xl">Ferramentas</Text>
             </View>
         </ScrollView>
     )
