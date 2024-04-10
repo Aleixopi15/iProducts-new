@@ -1,7 +1,10 @@
 import { Text, TouchableOpacity, View } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import { Feather, AntDesign, FontAwesome5, MaterialIcons, Entypo } from '@expo/vector-icons';
 import { Search } from "@/components/search";
 import { Categories } from "@/components/categories";
+
+import { colors } from "@/styles/colors";
+import { router } from "expo-router";
 
 export default function Home() {
     return (
@@ -24,6 +27,14 @@ export default function Home() {
             <Search placeholder="Pesquisar"/>
 
             <Categories />
+
+            <View className="flex-row justify-between">
+            <Entypo name="home" size={26} color={colors.green[500]} onPress={ () => router.navigate("/home")}/>
+            <FontAwesome5 name="heart" size={22} color={colors.gray[200]} onPress={ () => router.navigate("/favorite")}/>
+            <Feather name="user" size={24} color={colors.gray[200]} onPress={ () => router.navigate("/profile")}/>
+            <MaterialIcons name="history" size={26} color={colors.gray[200]} onPress={() => router.navigate("/history")}/>
+            </View>
+            
         </View>
     )
 }
