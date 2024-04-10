@@ -1,9 +1,9 @@
-import { View, Image, Text, KeyboardAvoidingView, Alert } from "react-native";
+import { View, Image, Text, TouchableOpacity, Alert } from "react-native";
 import { router } from "expo-router";
+import { useState } from "react";
 
 import { ButtonLogin } from "@/components/button-login";
 import { InputLogin } from "@/components/input-login";
-import { useState } from "react";
 
 export default function Register() {
     const [name, setName] = useState("")
@@ -26,8 +26,20 @@ export default function Register() {
         
         <View className="flex-1 bg-gray-100 items-center">
 
-            <View className="flex-1 bg-white w-full pt-2 items-center justify-center max-h-96 rounded-b-[40px] ">
+            <View className="flex-1 bg-white w-full pt-2 items-center justify-center max-h-[330px] rounded-b-[40px] ">
             <Image className="rounded-full h-44 w-44" source={require("@/assets/logo.png")}/>
+            <View className="flex-row gap-32 absolute bottom-0">
+
+            <TouchableOpacity activeOpacity={0.7} onPress={ () => router.navigate("/login")}>
+                <Text className="font-inter-bold text-lg">Login</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity activeOpacity={0.7}>
+                <Text className="font-inter-bold text-lg border-b-2 border-green-500 pb-3">Registro</Text>
+            </TouchableOpacity>
+
+            </View>
+
             </View>
             <View className="pr-12 pl-12 pt-8 w-full">
 

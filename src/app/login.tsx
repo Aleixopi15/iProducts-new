@@ -1,9 +1,10 @@
-import { View, Image, Text, KeyboardAvoidingView, Alert } from "react-native";
+import { View, Image, Text, TouchableOpacity, Alert } from "react-native";
 import { Link, router } from "expo-router";
+import { useState } from "react";
 
 import { ButtonLogin } from "@/components/button-login";
 import { InputLogin } from "@/components/input-login";
-import { useState } from "react";
+
 
 export default function Login() {
     const [email, setEmail] = useState("")
@@ -24,9 +25,23 @@ export default function Login() {
         
         <View className="flex-1 bg-gray-100 items-center">
 
-            <View className="flex-1 bg-white w-full pt-2 items-center justify-center max-h-96 rounded-b-[40px] ">
+            <View className="flex-1 bg-white w-full pt-2 items-center justify-center max-h-[330px] rounded-b-[40px] ">
             <Image className="rounded-full h-44 w-44" source={require("@/assets/logo.png")}/>
+
+            <View className="flex-row gap-32 absolute bottom-0">
+
+            <TouchableOpacity activeOpacity={0.7}>
+                <Text className="font-inter-bold text-lg border-b-2 pb-3 border-green-500">Login</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity activeOpacity={0.7} onPress={ () => router.navigate("/register")}>
+                <Text className="font-inter-bold text-lg">Registro</Text>
+            </TouchableOpacity>
+
             </View>
+
+            </View>
+            
             <View className="pr-12 pl-12 pt-8 w-full">
 
                 <Text className="pb-2 font-inter-bold">Endereço de email</Text>
