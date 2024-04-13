@@ -1,10 +1,11 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Feather, AntDesign, FontAwesome5, MaterialIcons, Entypo } from '@expo/vector-icons';
 import { Search } from "@/components/search";
 import { Categories } from "@/components/categories";
 
 import { colors } from "@/styles/colors";
 import { router } from "expo-router";
+import { Products } from "@/components/products";
 
 export default function Home() {
     return (
@@ -21,12 +22,21 @@ export default function Home() {
             </TouchableOpacity>
             
             </View>
-
+            <View className="flex-1">
             <Text className="font-inter-bold text-[35px] mt-8 mb-14">Produtos incríveis para você</Text>
 
             <Search placeholder="Pesquisar"/>
-
+            
+            
             <Categories />
+            
+
+            <ScrollView horizontal className="flex-1">
+            <Products title="Controle de Tv" price="29,90"/>
+            </ScrollView>
+
+            </View>
+            
 
             <View className="flex-row justify-between">
             <Entypo name="home" size={26} color={colors.green[500]} onPress={ () => router.navigate("/home")}/>

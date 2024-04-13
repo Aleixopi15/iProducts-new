@@ -1,4 +1,4 @@
-import { View, Image, Text, TouchableOpacity, Alert } from "react-native";
+import { View, Image, Text, TouchableOpacity, Alert, KeyboardAvoidingView, Dimensions, StatusBar} from "react-native";
 import { router } from "expo-router";
 import { useState } from "react";
 
@@ -24,26 +24,32 @@ export default function Register() {
 
     return (
         
-        <View className="flex-1 bg-gray-100 items-center">
+        <KeyboardAvoidingView behavior="position"
+        className="bg-gray-100 items-center " style={{
+            height: Dimensions.get("screen").height - (StatusBar.currentHeight ?? 0),
+          }}>
 
-            <View className="flex-1 bg-white w-full pt-2 items-center justify-center max-h-[330px] rounded-b-[40px] ">
-            <Image className="rounded-full h-44 w-44" source={require("@/assets/logo.png")}/>
-            <View className="flex-row gap-32 absolute bottom-0">
+            <View className="max-h-[330px] w-screen bg-white pt-14 items-center justify-center rounded-b-[40px] gap-8">
+            <Image className="rounded-full h-40 w-40" source={require("@/assets/logo.png")}/>
+
+            <View className="flex-row gap-32">
 
             <TouchableOpacity activeOpacity={0.7} onPress={ () => router.navigate("/login")}>
                 <Text className="font-inter-bold text-lg">Login</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.7}>
-                <Text className="font-inter-bold text-lg border-b-2 border-green-500 pb-3">Registro</Text>
+            <TouchableOpacity activeOpacity={0.7} onPress={ () => router.navigate("/register")}>
+                <Text className="font-inter-bold text-lg border-b-2 pb-3 border-green-500">Registro</Text>
             </TouchableOpacity>
 
             </View>
 
             </View>
-            <View className="pr-12 pl-12 pt-8 w-full">
+            
+            
+            <View className="flex-1 px-12 py-8 w-full">
 
-                <Text className="pb-2 font-inter-bold">Nome e sobrenome</Text>
+                <Text className="pb-2 font-inter-bold">Nome completo</Text>
                 <InputLogin>
                 <InputLogin.Field placeholder="Nome" onChangeText={setName}/>
                 </InputLogin>
@@ -55,18 +61,21 @@ export default function Register() {
 
                 <Text className="pb-2 pt-4 font-inter-bold">Senha</Text>
                 <InputLogin>
-                <InputLogin.Field placeholder="Senha" onChangeText={setPassword}/>
+                <InputLogin.Field placeholder="Senha" keyboardType="email-address" onChangeText={setPassword}/>
                 </InputLogin>
 
                 <Text className="pt-4 pb-2 font-inter-bold">Confirmar senha</Text>
                 <InputLogin>
-                <InputLogin.Field placeholder="Confirmar senha" onChangeText={setConfirmPassword}/>
+                <InputLogin.Field placeholder="Senha" onChangeText={setConfirmPassword}/>
                 </InputLogin>
 
-            <View className="flex-1 pt-8">
+            <View style={{ marginTop: 'auto' }} className="pb-4">
             <ButtonLogin className="" title="Login" onPress={handleRegister}/>
             </View>
+
             </View>
-        </View>
+        
+            
+        </KeyboardAvoidingView>
     )
 }
