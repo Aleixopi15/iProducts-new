@@ -1,4 +1,4 @@
-import { View, Text, } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 
 type Props = {
     title: string,
@@ -8,8 +8,6 @@ type Props = {
 
 export function Products( { title, image, price, }: Props) {
     return(
-    <View className="flex-1 bg-white m-10 rounded-3xl">
-        
-    </View>
+    <View className="flex-1 bg-white w-52 max-h-52"></View>
     )
 }
