@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 
 type Props = {
     title: string,
@@ -8,29 +8,29 @@ type Props = {
 
 export function Products( { title, image, price, }: Props) {
     return(
-    <ScrollView horizontal className="gap-5" showsHorizontalScrollIndicator={false}>
+    <ScrollView horizontal className="gap-5 -mr-10" showsHorizontalScrollIndicator={false}>
     <View className="flex-row mt-16 gap-3">
 
     <View className="flex-1 items-center bg-white w-48 max-h-72 rounded-[30px]">
-        <Image className="w-32 h-32 rounded-full -mt-8 border border-black" source={{ uri: "https://source.unsplash.com/random" }} />
+        <Image className="w-32 h-32 rounded-full -mt-8" source={{ uri: "https://source.unsplash.com/random" }} />
         <Text className="pt-5 font-inter-bold uppercase">Loja da esquina</Text>
         <Text className="pt-5 font-inter-regular text-gray-200">Loja com produtos variados, utensilios, eletronicos.</Text>
     </View>
 
     <View className="flex-1 items-center bg-white w-48 max-h-72 rounded-[30px]">
-        <Image className="w-32 h-32 rounded-full -mt-8 border border-black" source={{ uri: "https://source.unsplash.com/random" }} />
+        <Image className="w-32 h-32 rounded-full -mt-8" source={{ uri: "https://source.unsplash.com/random" }} />
         <Text className="pt-5 font-inter-bold uppercase">Loja da esquina</Text>
         <Text className="pt-5 font-inter-regular text-gray-200">Loja com produtos variados, utensilios, eletronicos.</Text>
     </View>
 
     <View className="flex-1 items-center bg-white w-48 max-h-72 rounded-[30px]">
-        <Image className="w-32 h-32 rounded-full -mt-8 border border-black" source={{ uri: "https://source.unsplash.com/random" }} />
+        <Image className="w-32 h-32 rounded-full -mt-8" source={{ uri: "https://source.unsplash.com/random" }} />
         <Text className="pt-5 font-inter-bold uppercase">Loja da esquina</Text>
         <Text className="pt-5 font-inter-regular text-gray-200">Loja com produtos variados, utensilios, eletronicos.</Text>
     </View>
 
     <View className="flex-1 items-center bg-white w-48 max-h-72 rounded-[30px]">
-        <Image className="w-32 h-32 rounded-full -mt-8 border border-black" source={{ uri: "https://source.unsplash.com/random" }} />
+        <Image className="w-32 h-32 rounded-full -mt-8" source={{ uri: "https://source.unsplash.com/random" }} />
         <Text className="pt-5 font-inter-bold uppercase">Loja da esquina</Text>
         <Text className="pt-5 font-inter-regular text-gray-200">Loja com produtos variados, utensilios, eletronicos.</Text>
     </View>
