@@ -1,17 +1,19 @@
 import { View, Image, Text, TouchableOpacity, Alert, KeyboardAvoidingView, Dimensions, StatusBar} from "react-native";
 import { router } from "expo-router";
 import { useState } from "react";
+import { supabase } from "@/services/supabase";
 
 import { ButtonLogin } from "@/components/button-login";
 import { InputLogin } from "@/components/input-login";
+import { Loading } from "@/components/loading";
 
 export default function Register() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
+    const [loading, setLoading] = useState(false)
 
-    async function handleRegister() {
+    /*async function handleRegister() {
         try {
             if(!password.trim() || !email.trim()){
                 return Alert.alert("Registro", "Preencha todos os campos!")
@@ -20,12 +22,26 @@ export default function Register() {
 
     } catch (error) {
         console.log(error)
-    }}
+    }}*/
+    
+      async function signUpWithEmail() {
+        setLoading(true)
+        const {
+          data: { session },
+          error,
+        } = await supabase.auth.signUp({
+          email: email,
+          password: password,
+        })
+    
+        if (error) Alert.alert(error.message)
+        if (!session) Alert.alert('Please check your inbox for email verification!')
+        setLoading(false)
+      }
 
     return (
         
-        <KeyboardAvoidingView behavior="position"
-        className="bg-gray-100 items-center " style={{
+        <View className="bg-gray-100 items-center " style={{
             height: Dimensions.get("screen").height - (StatusBar.currentHeight ?? 0),
           }}>
 
@@ -56,26 +72,21 @@ export default function Register() {
 
                 <Text className="pt-4 pb-2 font-inter-bold">Endereço de email</Text>
                 <InputLogin>
-                <InputLogin.Field placeholder="Email" keyboardType="email-address" onChangeText={setEmail}/>
+                <InputLogin.Field placeholder="Email" keyboardType="email-address" onChangeText={setEmail} value={email}/>
                 </InputLogin>
 
                 <Text className="pb-2 pt-4 font-inter-bold">Senha</Text>
                 <InputLogin>
-                <InputLogin.Field placeholder="Senha" keyboardType="email-address" onChangeText={setPassword}/>
-                </InputLogin>
-
-                <Text className="pt-4 pb-2 font-inter-bold">Confirmar senha</Text>
-                <InputLogin>
-                <InputLogin.Field placeholder="Senha" onChangeText={setConfirmPassword}/>
+                <InputLogin.Field placeholder="Senha" keyboardType="email-address" onChangeText={setPassword} value={password}/>
                 </InputLogin>
 
             <View style={{ marginTop: 'auto' }} className="pb-4">
-            <ButtonLogin className="" title="Login" onPress={handleRegister}/>
+            <ButtonLogin className="" title="Login" onPress={signUpWithEmail} disabled={loading}/>
             </View>
 
             </View>
         
             
-        </KeyboardAvoidingView>
+        </View>
     )
 }

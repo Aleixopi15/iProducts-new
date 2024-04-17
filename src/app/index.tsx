@@ -3,6 +3,7 @@ import { Link, router } from "expo-router"
 import { AntDesign } from '@expo/vector-icons';
 
 import { Button } from "@/components/button"
+import GoogleButton from "@/components/Auth.native";
 
 export default function Initial() {
 
@@ -12,9 +13,7 @@ export default function Initial() {
             <Image source={require("@/assets/logo.png")}/>
 
             <View className="w-full gap-8">
-
-                <Button title="Login com o google" />
-
+                
                 <Button title="Login" onPress={ () => router.navigate("/login")} />
                 
             </View>

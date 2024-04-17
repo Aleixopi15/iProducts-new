@@ -2,7 +2,6 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { Feather, AntDesign, FontAwesome5, MaterialIcons, Entypo } from '@expo/vector-icons';
 import { Search } from "@/components/search";
 import { Categories } from "@/components/categories";
-import Modal from "react-native-modal"
 
 import { colors } from "@/styles/colors";
 import { router } from "expo-router";
