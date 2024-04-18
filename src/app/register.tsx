@@ -12,19 +12,11 @@ export default function Register() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [loading, setLoading] = useState(false)
-
-    /*async function handleRegister() {
-        try {
-            if(!password.trim() || !email.trim()){
-                return Alert.alert("Registro", "Preencha todos os campos!")
-            }
-            router.navigate("/home")
-
-    } catch (error) {
-        console.log(error)
-    }}*/
     
-      async function signUpWithEmail() {
+      async function handleSignUp() {
+        if(!password.trim() || !email.trim()){
+          return Alert.alert("Registro", "Preencha todos os campos!")
+        }
         setLoading(true)
         const {
           data: { session },
@@ -34,9 +26,14 @@ export default function Register() {
           password: password,
         })
     
-        if (error) Alert.alert(error.message)
-        if (!session) Alert.alert('Please check your inbox for email verification!')
+        if (error) {
+        Alert.alert(error.message)
         setLoading(false)
+      }else {
+        router.navigate("/home")
+      }
+
+        
       }
 
     return (
@@ -77,11 +74,11 @@ export default function Register() {
 
                 <Text className="pb-2 pt-4 font-inter-bold">Senha</Text>
                 <InputLogin>
-                <InputLogin.Field placeholder="Senha" keyboardType="email-address" onChangeText={setPassword} value={password}/>
+                <InputLogin.Field placeholder="Senha" onChangeText={setPassword} value={password}/>
                 </InputLogin>
 
             <View style={{ marginTop: 'auto' }} className="pb-4">
-            <ButtonLogin className="" title="Login" onPress={signUpWithEmail} disabled={loading}/>
+            <ButtonLogin className="" title="Login" onPress={handleSignUp} disabled={loading}/>
             </View>
 
             </View>
