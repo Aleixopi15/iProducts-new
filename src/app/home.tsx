@@ -7,6 +7,7 @@ import { colors } from "@/styles/colors";
 import { router } from "expo-router";
 import { Products } from "@/components/products";
 import { useState } from "react";
+import GoogleButton from "@/components/Auth.native";
 
 export default function Home() {
     const [isVisibleMenu, setVisibleMenu] = useState(false)
@@ -33,6 +34,7 @@ export default function Home() {
             
             
             <Categories />
+            
             
             <Products title="Controle de Tv" price="29,90"/>
         

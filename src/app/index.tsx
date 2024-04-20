@@ -13,6 +13,8 @@ export default function Initial() {
             <Image source={require("@/assets/logo.png")}/>
 
             <View className="w-full gap-8">
+
+            <GoogleButton/>
                 
                 <Button title="Login" onPress={ () => router.navigate("/login")} />
                 
