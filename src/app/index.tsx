@@ -6,15 +6,16 @@ import { Button } from "@/components/button"
 import GoogleButton from "@/components/Auth.native";
 
 export default function Initial() {
+    
 
     return (
         <View className="flex-1 bg-green-500 items-center pt-40 p-14">
 
             <Image source={require("@/assets/logo.png")}/>
 
-            <View className="w-full gap-8">
-
-            <GoogleButton/>
+            <View className="w-full gap-8 -mt-4">
+                
+                <View className="items-center"><GoogleButton/></View>
                 
                 <Button title="Login" onPress={ () => router.navigate("/login")} />
                 

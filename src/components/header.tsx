@@ -8,7 +8,7 @@ type Props = {
 
 export function Header( {title}: Props ){
     return(
-        <View>
+        <View className="pb-10">
         <TouchableOpacity activeOpacity={0.7} onPress={() => router.back()}>
         <Ionicons className="absolute" name="chevron-back-outline" size={30} color="black"/>
         </TouchableOpacity>
