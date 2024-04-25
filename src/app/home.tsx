@@ -22,7 +22,7 @@ export default function Home() {
             </TouchableOpacity>
 
             <TouchableOpacity activeOpacity={0.7}>
-            <Feather name="shopping-cart" size={30} color="black" />
+            <Feather name="shopping-cart" size={30} color="black" onPress={ () => router.navigate("/cart")}/>
             </TouchableOpacity>
             
             </View>

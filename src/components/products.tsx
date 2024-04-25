@@ -8,7 +8,7 @@ type Props = {
 
 export function Products( { title, image, price, }: Props) {
     return(
-    <ScrollView horizontal className="gap-5 -mr-10" showsHorizontalScrollIndicator={false}>
+    <ScrollView horizontal className="-mr-10" showsHorizontalScrollIndicator={false}>
     <View className="flex-row mt-16 gap-3">
 
     <View className="flex-1 items-center bg-white w-48 max-h-72 rounded-[30px]">
