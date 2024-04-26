@@ -10,13 +10,13 @@ import { InputLogin } from "@/components/input-login";
 export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [loading, setLoading] = useState(false)
+    const [isLoading, setIsLoading ] = useState(false)
 
       async function handleSignIn() {
         if(!password.trim() || !email.trim()){
           return Alert.alert("Login", "Preencha todos os campos!")
         }
-        setLoading(true)
+        setIsLoading(true)
         const { error, } = await supabase.auth.signInWithPassword({
           email: email,
           password: password,
@@ -24,7 +24,7 @@ export default function Login() {
     
         if (error) {
         Alert.alert(error.message)
-        setLoading(false)
+        setIsLoading(false)
         }else {
           router.navigate("/home")
         }
@@ -36,8 +36,8 @@ export default function Login() {
   className="bg-gray-100 items-center"
   style={{
     height: Dimensions.get("screen").height - (StatusBar.currentHeight ?? 0),
-  }}
->
+  }}>
+
   <View className="bg-white w-screen max-h-[330px] pt-14 items-center justify-center rounded-b-[40px] gap-8">
     <Image
       className="rounded-full w-40 h-40"
@@ -75,7 +75,7 @@ export default function Login() {
       Esqueceu sua senha?
     </Link>
     <View style={{ marginTop: "auto" }} className="pb-4">
-      <ButtonLogin className="" title="Login" onPress={handleSignIn} disabled={loading}/>
+      <ButtonLogin title="Login" onPress={handleSignIn} isLoading={isLoading}/>
     </View>
   </View>
 </View>

@@ -12,12 +12,13 @@ export default function Register() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [loading, setLoading] = useState(false)
+    const [isLoading, setIsLoading ] = useState(false)
     
       async function handleSignUp() {
         if(!password.trim() || !email.trim()){
           return Alert.alert("Registro", "Preencha todos os campos!")
         }
-        setLoading(true)
+        setIsLoading(true)
         const {
           data: { session },
           error,
@@ -28,7 +29,7 @@ export default function Register() {
     
         if (error) {
         Alert.alert(error.message)
-        setLoading(false)
+        setIsLoading(false)
       }else {
         router.navigate("/home")
       }
@@ -78,7 +79,7 @@ export default function Register() {
                 </InputLogin>
 
             <View style={{ marginTop: 'auto' }} className="pb-4">
-            <ButtonLogin className="" title="Login" onPress={handleSignUp} disabled={loading}/>
+            <ButtonLogin title="Login" onPress={handleSignUp} isLoading={isLoading}/>
             </View>
 
             </View>
