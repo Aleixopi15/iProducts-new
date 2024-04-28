@@ -25,6 +25,11 @@ export default function Register() {
         } = await supabase.auth.signUp({
           email: email,
           password: password,
+          options: {
+            data: {
+              name: name,
+            }
+          }
         })
     
         if (error) {
