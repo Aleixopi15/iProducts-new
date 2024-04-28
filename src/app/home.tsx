@@ -5,7 +5,7 @@ import { Categories } from "@/components/categories";
 
 import { colors } from "@/styles/colors";
 import { router } from "expo-router";
-import { Products } from "@/components/products";
+import { Stores } from "@/components/stores";
 import { useState } from "react";
 import GoogleButton from "@/components/Auth.native";
 
@@ -36,12 +36,12 @@ export default function Home() {
             <Categories />
             
             
-            <Products title="Controle de Tv" price="29,90"/>
+            <Stores/>
         
             </View>
             
-
-            <View className="flex-row justify-between">
+        <View className="border-b border-black/50 -mx-10"></View>
+            <View className="flex-row pt-6 justify-between">
             <Entypo name="home" size={26} color={colors.green[500]} onPress={ () => router.navigate("/home")}/>
             <FontAwesome5 name="heart" size={22} color={colors.gray[200]} onPress={ () => router.navigate("/favorite")}/>
             <Feather name="user" size={24} color={colors.gray[200]} onPress={ () => router.navigate("/profile")}/>
